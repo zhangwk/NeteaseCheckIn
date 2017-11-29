@@ -213,7 +213,7 @@ class NetEase(object):
 			return -1
 
 	def writeToFile(self, data):
-		with open(('qiandaoRecord' + '.txt'), 'a', encoding='utf-8') as file:
+		with open(('qiandaoRecord' + '.txt'), 'a') as file:
 			file.write(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + str(data) + '\n')
 
 
