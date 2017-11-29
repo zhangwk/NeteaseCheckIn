@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 from __future__ import division
@@ -168,7 +168,7 @@ class NetEase(object):
 			                               timeout=default_timeout)
 			self.session.cookies.save()
 		connection.encoding = 'utf-8'
-		print(connection.text)
+	#	print(connection.text)
 		return connection.text
 
 	# if connection.status_code==200:
@@ -213,26 +213,26 @@ class NetEase(object):
 			return -1
 
 	def writeToFile(self, data):
-		file=codecs.open(('qiandaoRecord' + '.txt'), 'a','utf-8') 
+		file=codecs.open(('/home/gitRepo/Netease/qiandaoRecord' + '.txt'), 'a','utf-8') 
 		file.write(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + (data) + '\n')
 
 
 ne = NetEase()
-ne.phone_login('yourPhoneNum','password' )
+ne.phone_login(12345678910,'yourpassword' )
 time.sleep(1)
 # mobilesignin = \
 mobilesignin = ne.daily_signin(0)
 if mobilesignin != -1 and mobilesignin['code'] not in (-2, 301):
-	print('移动端签到成功')
+	#print('移动端签到成功')
 	ne.writeToFile('移动端签到成功')
 else:
-	print('移动签到失败')
+	#print('移动签到失败')
 	ne.writeToFile('移动签到失败')
 time.sleep(1)
 pcsignin = ne.daily_signin(1)
 if pcsignin != -1 and pcsignin['code'] not in (-2, 301):
-	print('PC端签到成功')
+	#print('PC端签到成功')
 	ne.writeToFile('PC端签到成功')
 else:
-	print('PC签到失败')
+	#print('PC签到失败')
 	ne.writeToFile('PC端签到失败')
