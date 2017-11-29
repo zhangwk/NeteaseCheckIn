@@ -15,4 +15,6 @@
 
 plus:if you missing some library,install it.(google,baidu,whatever)
 
+it works fine on my ECS of aliyun,so enjoy it!
+
 thanks to https://github.com/darknessomi/musicbox 
