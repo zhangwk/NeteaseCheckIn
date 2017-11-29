@@ -16,7 +16,7 @@ import time
 import hashlib
 import base64
 import binascii
-
+import codecs
 from Crypto.Cipher import AES
 from http.cookiejar import LWPCookieJar
 
@@ -213,8 +213,8 @@ class NetEase(object):
 			return -1
 
 	def writeToFile(self, data):
-		with open(('qiandaoRecord' + '.txt'), 'a') as file:
-			file.write(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + str(data) + '\n')
+		file=codecs.open(('qiandaoRecord' + '.txt'), 'a','utf-8') 
+		file.write(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + (data) + '\n')
 
 
 ne = NetEase()
