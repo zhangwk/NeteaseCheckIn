@@ -9,8 +9,8 @@ Thanks to [musicbox](https://github.com/darknessomi/musicbox)
 
 Requirements
 ------------
-*Python  
-*git
+* Python  
+* git
 
 
 Installation
