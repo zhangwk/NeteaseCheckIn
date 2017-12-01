@@ -4,7 +4,7 @@ only for Netease check in  (including PC,mobilephone site)
 
 Thanks to [musicbox](https://github.com/darknessomi/musicbox)
  
-[中文说明](https://github.com/zhangwk/NeteaseCheckIn/master/README-zh.md)  
+[中文说明](https://github.com/zhangwk/NeteaseCheckIn/blob/master/README-zh.md)  
 =========================
 
 Requirements
