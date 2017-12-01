@@ -16,19 +16,16 @@ Requirements
 Installation
 ------------
 ```
-
-
 git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
-
-
-
 ```
 Custom
 --------
 
 * Configure account
 ```python
+   cd NeteaseCheckIn
    vim Netease.py
+   
    ne.phone_login(
    12345678910,     =>Your phoneNumber
    'yourpassword'   =>Your password
