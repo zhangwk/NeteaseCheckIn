@@ -41,5 +41,5 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
 --------
 如果在IDE中运行，你应该能看到所缺少的库。  
 此py在我的云服务器上运行正常，CentOs 7.  
-使用定时任务运行，Crontab，每天签到。
+配合定时任务（Crontab）运行，每天自动签到。
 
