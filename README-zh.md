@@ -27,8 +27,8 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
    vim Netease.py
    
    ne.phone_login(
-   12345678910,     =>Your phoneNumber
-   'yourpassword'   =>Your password
+   12345678910,     =>手机号码
+   'yourpassword'   =>对应的密码
    )
 ```
 下一步
