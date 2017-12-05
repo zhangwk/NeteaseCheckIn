@@ -21,7 +21,7 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
 定制
 --------
 
-* Configure account
+* 填你的账号
 ```python
    cd NeteaseCheckIn
    vim Netease.py
@@ -31,6 +31,10 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
    'yourpassword'   =>Your password
    )
 ```
+下一步
+----------
+添加邮箱登陆，忘了，忘了
+
 讨论
 ----------
 - [submit issue](https://github.com/zhangwk/NeteaseCheckIn/issues/new)
