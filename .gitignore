@@ -1,3 +1,6 @@
+#Remove qiandaoRecork.txt   by zhangwk
+qiandaoRecord.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
