@@ -25,6 +25,7 @@ import requests
 from storage import Storage
 
 import logger
+import config
 
 default_timeout = 10
 
@@ -65,25 +66,6 @@ def rsaEncrypt(text, pubKey, modulus):
 	text = text[::-1]
 	rs = pow(int(binascii.hexlify(text), 16), int(pubKey, 16), int(modulus, 16))
 	return format(rs, 'x').zfill(256)
-
-
-def login(self, username, password):
-	pattern = re.compile(r'^0\d{2,3}\d{7,8}$|^1[34578]\d{9}$')
-	if pattern.match(username):
-		return self.phone_login(username, password)
-	action = 'https://music.163.com/weapi/login?csrf_token='
-	self.session.cookies.load()
-	text = {
-		'username': username,
-		'password': password,
-		'rememberLogin': 'true'
-	}
-	data = encrypted_request(text)
-	try:
-		return self.httpRequest('Login_POST', action, data)
-	except requests.exceptions.RequestException as e:
-		log.error(e)
-		return {'code': 501}
 
 
 class NetEase(object):
@@ -168,14 +150,29 @@ class NetEase(object):
 			                               timeout=default_timeout)
 			self.session.cookies.save()
 		connection.encoding = 'utf-8'
-	#	print(connection.text)
+		print(connection.text)
 		return connection.text
 
 	# if connection.status_code==200:
 
-
-
-
+	def login(self, username, password):
+		pattern = re.compile(r'^0\d{2,3}\d{7,8}$|^1[34578]\d{9}$')
+		if pattern.match(username):
+			print('phone login ==>>')
+			return self.phone_login(username, password)
+		action = 'https://music.163.com/weapi/login?csrf_token='
+		self.session.cookies.load()
+		text = {
+			'username': username,
+			'password': password,
+			'rememberLogin': 'true'
+		}
+		data = encrypted_request(text)
+		try:
+			return self.httpRequest('Login_POST', action, data)
+		except requests.exceptions.RequestException as e:
+			log.error(e)
+			return {'code': 501}
 
 	# 手机登录
 
@@ -201,7 +198,6 @@ class NetEase(object):
 
 	# 每日签到
 
-
 	def daily_signin(self, type):
 		action = 'http://music.163.com/weapi/point/dailyTask'
 		text = {'type': type}
@@ -212,27 +208,33 @@ class NetEase(object):
 			log.error(e)
 			return -1
 
+	# 记录结果到本地的 txt 文件中
+
 	def writeToFile(self, data):
-		file=codecs.open(('/home/gitRepo/Netease/qiandaoRecord' + '.txt'), 'a','utf-8') 
+		file = codecs.open(('qiandaoRecord' + '.txt'), 'a', 'utf-8')
 		file.write(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + (data) + '\n')
 
 
 ne = NetEase()
-ne.phone_login(12345678910,'yourpassword' )
+ne.login(config.getuser(), config.getPassword())
 time.sleep(1)
 # mobilesignin = \
 mobilesignin = ne.daily_signin(0)
 if mobilesignin != -1 and mobilesignin['code'] not in (-2, 301):
-	#print('移动端签到成功')
+	# print('移动端签到成功')
 	ne.writeToFile('移动端签到成功')
+# elif mobilesignin == -2:
+# 	ne.writeToFile('重复签到')
 else:
-	#print('移动签到失败')
+	# print('移动签到失败')
 	ne.writeToFile('移动签到失败')
 time.sleep(1)
 pcsignin = ne.daily_signin(1)
 if pcsignin != -1 and pcsignin['code'] not in (-2, 301):
-	#print('PC端签到成功')
+	# print('PC端签到成功')
 	ne.writeToFile('PC端签到成功')
+# elif mobilesignin == -2:
+# 	ne.writeToFile('重复签到')
 else:
-	#print('PC签到失败')
+	# print('PC签到失败')
 	ne.writeToFile('PC端签到失败')
