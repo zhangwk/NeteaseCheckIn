@@ -38,6 +38,7 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
 ----------
 * 添加自动领取3天签到奖励（5积分，也就是星期三），领取7天签到奖励（10积分，星期天）
 * 这段时间一直挺忙的...老是忘了
+
 讨论
 ----------
 - [submit issue](https://github.com/zhangwk/NeteaseCheckIn/issues/new)
