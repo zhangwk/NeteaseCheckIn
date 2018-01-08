@@ -24,12 +24,14 @@ Custom
 * Configure account
 ```python
    cd NeteaseCheckIn
-   vim Netease.py
+   vim config.py
    
-   ne.phone_login(
-   12345678910,     =>Your phoneNumber
-   'yourpassword'   =>Your password
-   )
+   def getuser():
+	      return "12300001111"  # phone number    '12300001111' change it to your PhoneNumber
+ 
+
+   def getPassword():
+	      return "password"  # password     'password' change it to your Password 
 ```
 Discussing
 ----------
@@ -38,8 +40,8 @@ Discussing
 
 Next Plan
 ----------
-* add mail-login function.
 * collect 3-days check-in prize(5 points),and one-week check-in prize (10 points).
+* sorry,guys,give me few more days. 
 
 Plus
 --------
