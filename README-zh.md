@@ -24,18 +24,20 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
 * 填你的账号
 ```python
    cd NeteaseCheckIn
-   vim Netease.py
+   vim config.py
    
-   ne.phone_login(
-   12345678910,     =>手机号码
-   'yourpassword'   =>对应的密码
-   )
+   def getuser():
+       return "12300001111"  # phone number 手机号
+
+
+   def getPassword():
+      	return "password"  # password 密码
+
 ```
 下一步
 ----------
-* 添加邮箱登陆，忘了。。。
 * 添加自动领取3天签到奖励（5积分，也就是星期三），领取7天签到奖励（10积分，星期天）
-
+* 这段时间一直挺忙的...老是忘了
 讨论
 ----------
 - [submit issue](https://github.com/zhangwk/NeteaseCheckIn/issues/new)
