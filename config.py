@@ -1,6 +1,6 @@
 # encoding: UTF-8
 def getuser():
-	return '12300001111'  # phone number 手机号
+	return '12345678910'  # phone number 手机号
 
 
 def getPassword():
