@@ -36,8 +36,7 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
 ```
 下一步
 ----------
-* 添加自动领取3天签到奖励（5积分，也就是星期三），领取7天签到奖励（10积分，星期天）
-* 这段时间一直挺忙的...老是忘了
+* 无
 
 讨论
 ----------
@@ -47,7 +46,8 @@ git clone git@github.com:zhangwk/NeteaseCheckIn.git NeteaseCheckIn
 
 还有
 --------
-* 如果在IDE中运行，你应该能看到所缺少的库。  
-* 此py在我的云服务器上运行正常，CentOs 7.  
+* 在不同的操作系统中，极有可能会有编码格式错误。
+* 如果在IDE中运行，你应该能看到所缺少的库。   
+* 此py在我的云服务器上运行正常，CentOs 7。
 * 配合定时任务（Crontab）运行，每天自动签到。
 
