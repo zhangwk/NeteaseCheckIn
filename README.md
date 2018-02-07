@@ -40,11 +40,12 @@ Discussing
 
 Next Plan
 ----------
-* collect 3-days check-in prize(5 points),and one-week check-in prize (10 points).
-* sorry,guys,give me few more days. 
+* Nope.
 
 Plus
 --------
+* You probably will facing some 'encoding format error' in different OS.
+
 * if you missing some library,install it.(google,baidu,whatever helps)
 
 * it works fine on my CentOS ECS of aliyun,so enjoy it!
